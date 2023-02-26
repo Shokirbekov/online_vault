@@ -19,7 +19,7 @@ class Mahsulot(models.Model):
     olchov = models.CharField(max_length=500)
     ombor = models.ForeignKey(Ombor, on_delete=models.CASCADE)
     def __str__(self):
-        return f"{self.nom}({self.ombor})"
+        return f"{self.nom}"
 
 class Client(models.Model):
     ism = models.CharField(max_length=150)
@@ -28,3 +28,5 @@ class Client(models.Model):
     tel = models.PositiveIntegerField()
     qarz = models.PositiveIntegerField()
     ombor = models.ForeignKey(Ombor, on_delete=models.CASCADE)
+    def __str__(self):
+        return f"{self.ism}({self.ombor})"

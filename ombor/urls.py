@@ -8,4 +8,5 @@ urlpatterns = [
     path('', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view()),
     path('vault/', include('vault.urls')),
+    path('stats/', include('statistika.urls')),
 ]
